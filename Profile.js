@@ -9,6 +9,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import CreateIcon from '@material-ui/icons/Create';
 import BottomNavbar from './BottomNavbar';
+import { Link } from "react-router-dom";
+
 
 
 const Profile = () => {
@@ -33,19 +35,19 @@ const Profile = () => {
                         When you want to let the world know you're not really sure what's happening, but you also don't care:
                     </Caption>
                     <OneLineCenter>
-                        <SchoolIcon style={{ fontSize: '1.4rem', fill: 'grey', marginBottom: '-0.4rem' }} />
+                        <SchoolIcon style={{ fontSize: '1.4rem', fill: '#efc8c8', marginBottom: '-0.4rem' }} />
                         <p>Economics and Sales</p>
                     </OneLineCenter>
                     <OneLineCenter>
-                        <BusinessCenterIcon style={{ fontSize: '1.4rem', fill: 'grey', marginBottom: '-0.4rem' }} />
+                        <BusinessCenterIcon style={{ fontSize: '1.4rem', fill: '#efc8c8', marginBottom: '-0.4rem' }} />
                         <p>Fresher, 25</p>
                     </OneLineCenter>
                     <OneLineCenter>
-                        <BubbleChartIcon style={{ fontSize: '1.4rem', fill: 'grey', marginBottom: '-0.4rem' }} />
+                        <BubbleChartIcon style={{ fontSize: '1.4rem', fill: '#efc8c8', marginBottom: '-0.4rem' }} />
                         <p>Sketch and paintings</p>
                     </OneLineCenter>
                     <OneLineCenter>
-                        <CheckCircleIcon style={{ fontSize: '1.4rem', fill: 'grey', marginBottom: '-0.4rem' }} />
+                        <CheckCircleIcon style={{ fontSize: '1.4rem', fill: '#efc8c8', marginBottom: '-0.4rem' }} />
                         <p>Hookups and one night stands</p>
                     </OneLineCenter>
 
@@ -56,11 +58,11 @@ const Profile = () => {
                         </section>
                     </OneLineDown>
                     <OneLineCenter>
-                        <InstagramIcon style={{ fontSize: '1.4rem', fill: 'grey', marginBottom: '-0.4rem' }} />
+                        <InstagramIcon style={{ fontSize: '1.4rem', fill: '#efc8c8', marginBottom: '-0.4rem' }} />
                         <p>@iamatanunayak</p>
                     </OneLineCenter>
                     <OneLineCenter>
-                        <TwitterIcon style={{ fontSize: '1.4rem', fill: 'grey', marginBottom: '-0.4rem' }} />
+                        <TwitterIcon style={{ fontSize: '1.4rem', fill: '#efc8c8', marginBottom: '-0.4rem' }} />
                         <p>@nayakerrrr</p>
                     </OneLineCenter>
 
@@ -105,9 +107,12 @@ const Profile = () => {
                     </Passions>
 
                 </ShowUserCredentials>
-            <EditProfile>
-                <CreateIcon style={{ fill: 'white' }} />
-            </EditProfile>
+
+                <Link to="/edit-account">
+                    <EditProfile>
+                        <CreateIcon style={{ fill: 'white' }} />
+                    </EditProfile>
+                </Link>
             <BottomNavbar/>
             </Container>
         </>
@@ -119,7 +124,9 @@ export default Profile
 const Container = styled.div`
     padding-bottom: 1.8rem;
     position: relative;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
+    background-color: #1f2225;
+    min-height: 100vh;
 `
 
 const EditProfile = styled.div`
@@ -163,16 +170,19 @@ const OneLineDown = styled.div`
     display: flex;
     align-items: flex-end;
 
+
     span{
         font-size: 1.65rem;
         font-weight: 600;
         letter-spacing: 0.15rem;
+        color: white;
 
         p{
             font-size: 1.25rem;
             display: inline-block;
             margin-left: 0.4rem;
             font-weight: 300;
+            color: white;
         }
     }
 
@@ -181,12 +191,15 @@ const OneLineDown = styled.div`
         font-weight: 600;
         letter-spacing: 0.15rem;
         margin-top: 1.4rem;
+        color: white;
+
 
         p{
             font-size: 1.25rem;
             display: inline-block;
             margin-left: 0.4rem;
             font-weight: 300;
+            
         }
     }
 `
@@ -199,7 +212,7 @@ const OneLineCenter = styled.div`
     margin-bottom: 0.2rem;
     
     p{
-        color: grey;
+        color: #efc8c8;
         display: inline-block;
         margin-left: 10px;
         margin-top: -10px;
@@ -209,6 +222,7 @@ const OneLineCenter = styled.div`
 const Caption = styled.div`
     font-size: 0.8rem;
     margin-bottom: 0.8rem;
+    color: white;
 `
 
 const Passions = styled.div`
@@ -220,7 +234,7 @@ const Passion = styled.div`
     padding: 0.3rem;
     border-radius: 100px;
     font-size: 0.7rem;
-    color: grey;
-    border: 1px solid grey;
+    color: #efc8c8;
+    border: 1px solid #efc8c8;
     margin: 0 0.3rem 0.3rem 0;
 `

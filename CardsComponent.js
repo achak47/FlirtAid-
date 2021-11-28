@@ -8,11 +8,14 @@ import StarIcon from '@material-ui/icons/Star';
 import ClearIcon from '@material-ui/icons/Clear';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import EmojiFoodBeverageIcon from '@material-ui/icons/EmojiFoodBeverage';
+import Fade from 'react-reveal/Fade';
+
 
 const CardsComponent = () => {
     return (
             <CardsContainer>
                     <Card >
+                
                     <CardTopBar>
                         <span></span>
                         <main></main>
@@ -23,11 +26,11 @@ const CardsComponent = () => {
                         <section>
                             <UserDesc>
                                 <p>
-                                    Zayn Malik
+                                    Kendall Jenner
                                 </p>
                                 <span>CSE 25, 21 mutual friends</span>
                                 <span style={{ fontWeight: '200', fontSize: '0.6rem' }}>
-                                    Party hard, till I die. Work | Create | Enjoy 
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, officia.
                                 </span>
                             </UserDesc>
                             {/* <InfoIcon style={{ fill: '#ffffffad', fontSize: '1.5rem' }} /> */}
@@ -37,9 +40,9 @@ const CardsComponent = () => {
                             <span>
                                 <ClearIcon   style={{ fill: 'grey', fontSize: '1.5rem' }} />
                             </span>
-                            <span  style={{height: '60px', width: '60px'}}>
-                                {/* <DashboardIcon  style={{ fill: 'white', fontSize: '1.5rem', fontSize: '2rem'  }} /> */}
-                                <FavoriteIcon  style={{ fill: 'red' , fontSize: '2rem'  }} />
+                            <span  style={{height: '55px', width: '55px'}}>
+                                <DashboardIcon  style={{ fill: 'white', fontSize: '1.4rem', fontSize: '2rem'  }} />
+                                {/* <FavoriteIcon  style={{ fill: 'red' , fontSize: '2rem'  }} /> */}
                             </span>
                             {/* <span style={{height: '55px', width: '55px'}}>
                                 <EmojiFoodBeverageIcon  style={{ fill: 'orange', fontSize: '2rem' }} />
@@ -48,20 +51,23 @@ const CardsComponent = () => {
                                 <StarIcon  style={{ fill: 'cornflowerblue', fontSize: '1.5rem' }} />
                             </span> */}
                             <span>
-                                {/* <FavoriteIcon  style={{ fill: 'red', fontSize: '1.5rem' }} /> */}
-                                <DashboardIcon  style={{ fill: 'white', fontSize: '1.5rem' }} />
+                                <FavoriteIcon  style={{ fill: 'red', fontSize: '1.5rem' }} />
+                                {/* <DashboardIcon  style={{ fill: 'white', fontSize: '1.5rem' }} /> */}
                             </span>
                         </Response>
                     </Card>
-                    <DescCard>
-                        <div>
-                            92%
-                        </div>
-                        <section>
-                            <strong>Highly compatible. </strong>
-                            You both like bollywood movies and 7 other tags.
-                        </section>
-                    </DescCard>
+
+                    <Fade bottom>
+                        <DescCard>
+                            <div>
+                                92%
+                            </div>
+                            <section>
+                                <strong>Highly compatible. </strong>
+                                You both like bollywood movies and 7 other tags.
+                            </section>
+                        </DescCard>
+                    </Fade>
                 </CardsContainer>
     )
 }
@@ -69,6 +75,7 @@ const CardsComponent = () => {
 export default CardsComponent
 
 const CardsContainer = styled.div`
+    background-color: #1f2225;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -108,7 +115,7 @@ const Response = styled.div`
     align-items: flex-end;
     justify-content: space-between;
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     width: 100%;
 
     span{
@@ -127,8 +134,9 @@ const Card = styled.div`
     background-color: white;
     border-radius: 10px;
     margin: 0 0 8px 0;
-    box-shadow: 0px 18px 53px 0px #a9a2a24d;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, #000000db 100%), url('https://www.glasgowtimes.co.uk/resources/images/4053884/?type=responsive-gallery') center center / cover no-repeat;
+    /* box-shadow: 0px 18px 53px 0px #a9a2a24d; */
+    /* box-shadow: 0px 0px 10px #646161, 2px -4px 34px #c9c9c9; */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, #000000db 100%), url('https://cdn.vox-cdn.com/thumbor/D7r069WE1aLClhY1c3oeoH2frWk=/0x0:3000x1995/1400x1400/filters:focal(1220x366:1700x846):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/54625997/678055686.0.jpg') center center / cover no-repeat;
     overflow: hidden;
     position: relative;
 
@@ -145,15 +153,16 @@ const Card = styled.div`
 
 const DescCard = styled.div`
     width: 100%;
-    background-color: white;
+    background-color: #2e3136;
     border-radius: 10px;
     margin-bottom: 50px;
     padding: 0.3rem;
-    box-shadow: 0px 1px 53px 0px #a9a2a24d;
+    /* box-shadow: 0px 1px 53px 0px #a9a2a24d; */
+    /* box-shadow: 0px 0px 10px #bfbaba, 2px -4px 34px #ddcece; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #FFDBC5;
+    border: 1px solid black;
     
 
     section{
@@ -162,6 +171,11 @@ const DescCard = styled.div`
         font-size: 0.7rem;
         line-height: 1rem;
         letter-spacing: 0.05rem;
+        color: white;
+
+        strong{
+            color: green;
+        }
     }
 
     div{

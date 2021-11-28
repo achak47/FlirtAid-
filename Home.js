@@ -6,27 +6,32 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import styled from 'styled-components';
 
+
 const Home = () => {
     return (
-        <>
+        <Container>
         <div>
-            <ShowOptions>
-                    <span>
-                        <ChevronLeftIcon style={{ fontSize: '0.8rem', fill: 'red' }} />
-                    </span>
-                    <span>
-                        <ChevronRightIcon style={{ fontSize: '0.8rem', fill: 'red' }} />
-                    </span>
-                </ShowOptions>
+            {/* <ShowOptions>
+                <span>
+                    <ChevronLeftIcon style={{ fontSize: '0.8rem', fill: 'red' }} />
+                </span>
+                <span>
+                    <ChevronRightIcon style={{ fontSize: '0.8rem', fill: 'red' }} />
+                </span>
+            </ShowOptions> */}
             <TopNavigation/>
             <CardsComponent/>
         </div>
         <BottomNavbar/>
-        </>
+        </Container>
     )
 }
 
 export default Home
+
+const Container = styled.div`
+    background-color: #1f2225;
+`
 
 const ShowOptions = styled.div`
     display: flex;

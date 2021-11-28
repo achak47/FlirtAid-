@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { Link } from 'react-router-dom';
 import BottomNavbar from './BottomNavbar'
+import SearchIcon from '@material-ui/icons/Search';
 
 
 const Updates = () => {
@@ -10,7 +13,7 @@ const Updates = () => {
             {/* ? We can also make a top orange colored
             thing that can show what can one do on this 
             page */}
-            <TopOptionHeader>
+            {/* <TopOptionHeader>
                 <span style={{background: '#f1f1f1'}}>
                     32 Likes
                 </span>
@@ -18,7 +21,31 @@ const Updates = () => {
                 <span>
                     Suggested
                 </span>
-            </TopOptionHeader>
+            </TopOptionHeader> */}
+            <TopBar>
+                <Link to='/home' style={{margin: '0.3rem 1rem 0 0'}}>
+                    <ArrowBackIcon style={{fill: 'white'}}/>
+                </Link>
+                <p>Zayn Malik</p>
+            </TopBar>
+            <TopOptionHeaderTop>
+            <Link to="/chats">
+                <span>
+                    Chats
+                </span>
+            </Link>
+                <section></section>
+                <Link to="/updates">
+                    <span style={{background: '#CF142B'}}>
+                        Updates
+                    </span>
+                </Link>
+            </TopOptionHeaderTop>
+            <SearchByName>
+                <SearchIcon style={{fontSize: '1.4rem', marginRight: '0.4rem'}}/>
+                <input type="text" placeholder="search"/>
+            </SearchByName>
+
             <CardHolder>
                 <Card style={{background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, #000000db 100%), url('https://media.glamour.com/photos/56957f9d5fff94d44eec31f3/master/pass/beauty-2015-02-dakota-johnson-fifty-shades-lipstick-main.jpg') center center / cover no-repeat"}}>
                     <section>
@@ -187,10 +214,6 @@ const Updates = () => {
                 </Card>
             </CardHolder>
         </Container>
-        <Floater>
-            See who likes you
-        </Floater>
-        <BottomNavbar></BottomNavbar>
         </CoverContainer>
     )
 }
@@ -198,13 +221,81 @@ const Updates = () => {
 export default Updates
 
 const CoverContainer = styled.div`
-    position: relative;
+    padding : 0.3rem;
+    background-color: #1f2225;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+    overflow-y: scroll;
 `
 
+const TopBar = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    
+    p{
+        color: white;
+    }
+
+`
+
+const TopOptionHeaderTop = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid #403b3bb3; */
+    padding:  0.2rem 0.6rem;
+    margin-top: 10px;
+
+    section{
+        height: 2rem;
+        /* background-color: #403b3bb3; */
+        width: 1px;
+    }
+
+    a{
+        width: 49%;
+    }
+    
+    span{
+        padding: 0.4rem;
+        display: grid;
+        place-items: center;
+        font-size: 0.8rem;
+        color: white;
+        border-radius: 100px;
+
+    }
+`
+
+const SearchByName = styled.div`
+    background-color: #f1f1f1;
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 0.3rem 0.3rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+
+    input{
+        width: 100%;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 0.8rem;
+    }
+`
+
+
+
+
 const Floater = styled.div`
-    position: fixed;
-    bottom: 75px;
-    background-color: orange;
+    position: absolute;
+    top: 10px;
+    background: rgb(176,28,51);
+    background: linear-gradient(90deg, rgba(176,28,51,1) 13%, rgba(134,101,106,1) 100%);
     border-radius: 50px;
     width: 85vw;
     margin: 0 7.5vw;
@@ -218,8 +309,10 @@ const Floater = styled.div`
 `
 
 const Container = styled.div`
-    padding: 0.8rem 0.3rem;
-    margin-bottom: 80px;
+    /* padding: 0.8rem 0.3rem; */
+    margin-bottom: 10px;
+    overflow-y: scroll;
+
 `
 
 const TopOptionHeader = styled.div`
