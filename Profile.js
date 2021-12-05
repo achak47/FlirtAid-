@@ -18,6 +18,13 @@ const Profile = () => {
         <>
             <Container>
                 <HeadProfilePic>
+                    <CardTopBar>
+                        <span></span>
+                        <main></main>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </CardTopBar>
                     <img src="https://i.pinimg.com/originals/b3/3f/1f/b33f1f9baceb448d08327fb83b97224f.jpg" alt="" />
                     <section>
                         <AddAPhotoIcon style={{ fill: 'white' }} />
@@ -124,7 +131,7 @@ export default Profile
 const Container = styled.div`
     padding-bottom: 1.8rem;
     position: relative;
-    margin-bottom: 60px;
+    padding-bottom: 90px;
     background-color: #1f2225;
     min-height: 100vh;
 `
@@ -159,6 +166,30 @@ const HeadProfilePic = styled.div`
         right: 10px;
         display: grid;
         place-items: center;
+    }
+`
+
+const CardTopBar = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.1rem 0.1rem;
+    position: absolute;
+    top: 0;
+    width: 99vw;
+
+    main{
+        height: 4px;
+        width: 19%;
+        border-radius: 100px;
+        background-color: pink;
+    }
+
+    span{
+        height: 4px;
+        width: 19%;
+        border-radius: 100px;
+        background-color: grey;
     }
 `
 

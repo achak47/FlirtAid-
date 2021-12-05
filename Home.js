@@ -5,12 +5,14 @@ import TopNavigation from './TopNavigation'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
 
 const Home = () => {
     return (
         <Container>
         <div>
+        <Fade>
             {/* <ShowOptions>
                 <span>
                     <ChevronLeftIcon style={{ fontSize: '0.8rem', fill: 'red' }} />
@@ -21,6 +23,7 @@ const Home = () => {
             </ShowOptions> */}
             <TopNavigation/>
             <CardsComponent/>
+        </Fade>
         </div>
         <BottomNavbar/>
         </Container>
@@ -31,6 +34,7 @@ export default Home
 
 const Container = styled.div`
     background-color: #1f2225;
+    min-height: 100vh;
 `
 
 const ShowOptions = styled.div`

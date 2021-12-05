@@ -110,7 +110,7 @@ const OneChat = () => {
 export default OneChat
 
 const GreatContainer = styled.div`
-    background-color: #1f2225;
+    background-color: #000000;
     min-height: 100vh;
     position: fixed;
     width: 100vw;
@@ -134,9 +134,9 @@ const RecievedMessages = styled.div`
     div{
         max-width: 60%;
         font-size: 0.75rem;
-        background: #EF4339;
+        background: #262626;
         color: white;
-        padding: 0.3rem;
+        padding: 0.5rem;
         margin-bottom: 1rem;
         border-radius: 0.8rem;
     }
@@ -163,10 +163,11 @@ const SentMessages = styled.div`
     div{
         max-width: 60%;
         font-size: 0.75rem;
-        background: #FFDBC5;
-        padding: 0.3rem;
+        background: #eb3a2a;
+        padding: 0.5rem;
         margin-bottom: 1rem;
         border-radius: 0.8rem;
+        color: white;
     }
 
     img{
@@ -180,6 +181,7 @@ const SentMessages = styled.div`
         float: right;
         margin-right: 0.4rem;
         line-height: 0.6rem;
+        color: white;
     }
 `
 

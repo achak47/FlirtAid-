@@ -257,6 +257,7 @@ const TopOptionHeaderTop = styled.div`
 
     a{
         width: 49%;
+        text-decoration: none;
     }
     
     span{

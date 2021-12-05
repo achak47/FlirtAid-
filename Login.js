@@ -63,8 +63,13 @@ const ChangeToRed = styled.main`
 const Container = styled.div`   
     min-height: 100vh;
     padding: 0.5rem;
-    background-color:black;
+    background-color:  black;
     position: relative;
+    position: fixed;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
 
     section{
         display: block;
@@ -79,7 +84,7 @@ const Container = styled.div`
 `
 
 const HideNav = styled.div`
-    position: fixed;
+    position: absolute;
     bottom: 0;
     height: 100px;
     width: 100vw;

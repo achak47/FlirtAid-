@@ -9,9 +9,27 @@ import ClearIcon from '@material-ui/icons/Clear';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import EmojiFoodBeverageIcon from '@material-ui/icons/EmojiFoodBeverage';
 import Fade from 'react-reveal/Fade';
+import { Link } from 'react-router-dom';
+
+
+
 
 
 const CardsComponent = () => {
+
+    const [showLike, setShowLike] = useState(false);
+    const [showCancel, setShowCancel] = useState(false);
+
+    const ShowLikeFunction = () => {
+        setShowLike(true);
+        setTimeout(function(){setShowLike(false)}, 1000);
+    }
+
+    const ShowCancelFunction = () => {
+        setShowCancel(true);
+        setTimeout(function(){setShowCancel(false)}, 1000);
+    }
+
     return (
             <CardsContainer>
                     <Card >
@@ -37,24 +55,41 @@ const CardsComponent = () => {
                         </section>
                         {/*  */}
                         <Response>
-                            <span>
-                                <ClearIcon   style={{ fill: 'grey', fontSize: '1.5rem' }} />
+                            <span onClick={() => ShowCancelFunction()}>
+                                <ClearIcon style={{ fill: 'grey', fontSize: '1.5rem' }} />
                             </span>
-                            <span  style={{height: '55px', width: '55px'}}>
-                                <DashboardIcon  style={{ fill: 'white', fontSize: '1.4rem', fontSize: '2rem'  }} />
-                                {/* <FavoriteIcon  style={{ fill: 'red' , fontSize: '2rem'  }} /> */}
-                            </span>
+                            <Link to="/view-profile">
+                                <span  style={{height: '55px', width: '55px'}}>
+                                    <DashboardIcon  style={{ fill: 'white', fontSize: '1.4rem', fontSize: '2rem'  }} />
+                                    {/* <FavoriteIcon  style={{ fill: 'red' , fontSize: '2rem'  }} /> */}
+                                </span>
+                            </Link>
                             {/* <span style={{height: '55px', width: '55px'}}>
                                 <EmojiFoodBeverageIcon  style={{ fill: 'orange', fontSize: '2rem' }} />
                             </span> */}
                             {/* <span>
                                 <StarIcon  style={{ fill: 'cornflowerblue', fontSize: '1.5rem' }} />
                             </span> */}
-                            <span>
+                            <span onClick={() => ShowLikeFunction()}>
                                 <FavoriteIcon  style={{ fill: 'red', fontSize: '1.5rem' }} />
                                 {/* <DashboardIcon  style={{ fill: 'white', fontSize: '1.5rem' }} /> */}
                             </span>
                         </Response>
+                        {
+                            showLike ? (
+                                <ShowLike>
+                                    <img src="https://media4.giphy.com/media/3oKIPqM8BJ0ofNQOzK/giphy.gif" alt="" />
+                                </ShowLike>
+                            ) : (<></>)
+                        }
+                        {
+                            showCancel ? (
+                                <ShowLike style={{marginTop: '-1rem'}}>
+                                    <img src="https://www.pngmart.com/files/10/Stop-Sign-Transparent-Background.png" alt="" />
+                                </ShowLike>
+                            ) : (<></>)
+                        }
+
                     </Card>
 
                     <Fade bottom>
@@ -68,11 +103,15 @@ const CardsComponent = () => {
                             </section>
                         </DescCard>
                     </Fade>
+
+                    
                 </CardsContainer>
     )
 }
 
 export default CardsComponent
+
+
 
 const CardsContainer = styled.div`
     background-color: #1f2225;
@@ -122,7 +161,7 @@ const Response = styled.div`
         height: 45px;
         width: 45px;
         border-radius: 50%;
-        border: 1px solid orange;
+        border: 3px solid orange;
         display: grid;
         place-items: center;
     }
@@ -148,6 +187,17 @@ const Card = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+    }
+`
+
+const ShowLike = styled.div`
+    position: absolute;
+    /* bottom: -100px; */
+    left: -50px;
+    
+
+    img{
+        height: 30rem;
     }
 `
 

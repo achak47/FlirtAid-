@@ -5,6 +5,7 @@ import ExploreIcon from '@material-ui/icons/Explore';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import ModeCommentIcon from '@material-ui/icons/ModeComment';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import StorefrontIcon from '@material-ui/icons/Storefront';
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 
@@ -64,7 +65,7 @@ const BottomNavbar = () => {
                             <SupportStructureLeft></SupportStructureLeft>
                             <LinkContainer>
                                 <Link to="/market" >
-                                    <WhatshotIcon style={{ fontSize: '1.8rem', fill: "white" }} />
+                                    <StorefrontIcon style={{ fontSize: '1.8rem', fill: "white" }} />
                                 </Link>
                             </LinkContainer>
                             <SupportStructureRight></SupportStructureRight>
@@ -72,7 +73,7 @@ const BottomNavbar = () => {
                     ) : (
                         <LinkContainerOthers>
                             <Link to="/market" onClick={(e) => setCurrent('Updates')}>
-                                <WhatshotIcon style={{ fontSize: '1.8rem', fill: "white" }} />
+                                <StorefrontIcon style={{ fontSize: '1.8rem', fill: "white" }} />
                             </Link>
                         </LinkContainerOthers>
                     )

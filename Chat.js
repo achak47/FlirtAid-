@@ -228,6 +228,7 @@ const TopOptionHeader = styled.div`
     /* border-bottom: 1px solid #403b3bb3; */
     padding: 0.2rem 0.6rem;
     margin-top: 10px;
+    text-decoration: none;
 
     section{
         height: 2rem;
