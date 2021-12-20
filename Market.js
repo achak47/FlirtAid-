@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import BasicBottomNav from './BasicBottomNav'
 
 const Market = () => {
     return (
+        <>
         <Container>
             <CardOne>
                     <img src="https://vlpnet.org/wp-content/uploads/2020/08/hand_heart_donate_icon.png" alt="" />
@@ -33,6 +35,8 @@ const Market = () => {
                     </section>
                 </CardOne>
         </Container>
+        <BasicBottomNav/>
+        </>
     )
 }
 

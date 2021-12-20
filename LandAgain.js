@@ -49,11 +49,10 @@ const LandAgain = () => {
                 </DancerDownIcon>
             </PageOne>
             <PageTwo>
-                <Fade bottom>
-                    <span>
-                        How we work
-                    </span>
-                </Fade>
+                <ImageOne>
+                    <img src="https://media-exp1.licdn.com/dms/image/C4E22AQF4c4c3JIYLbw/feedshare-shrink_800/0/1638699718727?e=1641427200&v=beta&t=sUKx7PCycBdsurW_hC6cesZ9Fi8ucdvsCvX0dhCOfyc" alt="" />
+                </ImageOne>
+                <section>
                 <Fade bottom>
                     <h1>Why to choose FlirtAid?</h1>
                 </Fade>
@@ -62,17 +61,66 @@ const LandAgain = () => {
                         Our site has a very attractive and unique feature to provide 
                         the probable compatibility rate between two people. That rate 
                         is calculated based on various features also your behaviour etc. 
+                        Lorem ipsum dolor. Debitis.
                     </p>
                 </Fade>
-                <Space/>
-                <Fade bottom>
-                    <p>
-                        With us your photographs and information are safe. You have the 
-                        power to love - accept - reject who ever you want.
-                    </p>
-                </Fade>
+                </section>
             </PageTwo>
-            <PageThree>
+
+
+
+            <FeaturesPage>
+                <Fade bottom>
+                    <h1 style={{marginLeft: '40%'}}>What's Special?</h1>
+                </Fade>
+                <section style={{marginLeft: '40%'}}>
+                    <Fade bottom>
+                        <p>
+                            Lorem ipsum dolor sit amet sit amet consectetur, adipisicing elit. Eaque, in.adipisicing elit. Eaque, in.
+                        </p>
+                    </Fade>
+                </section>
+                <ImageTwo style={{width: '40%'}} >
+                    <img src="https://media-exp1.licdn.com/dms/image/C4E22AQFo8PUivs-Ybw/feedshare-shrink_800/0/1638699654577?e=1641427200&v=beta&t=x8QzvZOZE2WxUYKVxawTDC5fO5x7LbSx2sIPu6uNubE" alt="" />
+                </ImageTwo>
+                {/*  */}
+                <section style={{marginRight: '40%', marginTop: '15vh'}}>
+                    <Fade bottom>
+                        <span>
+                            1. Love Percentage
+                        </span>
+                    </Fade>
+                    <Fade bottom>
+                        <p>
+                            Lorem ipsum dolor sit amet sit amet consectetur, adipisicing elit. Eaque, in.adipisicing elit. Eaque, in.
+                        </p>
+                    </Fade>
+                </section>
+                <ImageThree style={{width: '35%'}} >
+                    <img src="https://media-exp1.licdn.com/dms/image/C4E22AQG3WMlFDXqlrw/feedshare-shrink_800/0/1638702524630?e=1641427200&v=beta&t=OurzCaKF2gk-njpIh2jW0pEjt9C10Abp9E11jtViL50" alt="" />
+                </ImageThree>
+
+                <section style={{margin: '1.5rem 0 0 40%'}}>
+                    <Fade bottom>
+                        <span>
+                            2. Face Recognisation
+                        </span>
+                    </Fade>
+                    <Fade bottom>
+                        <p>
+                            Lorem ipsum dolor sit amet, adipisicing elit. Eaque, in.adipisicing elit. Eaque, in.
+                        </p>
+                    </Fade>
+                </section>
+                <ImageFour style={{width: '35%'}} >
+                    <img src="https://media-exp1.licdn.com/dms/image/C4E22AQE2jZyMB9E2gw/feedshare-shrink_2048_1536/0/1638703591367?e=1641427200&v=beta&t=yCNUVehcpvaczZQy_D4gUJi7V19qA8kc72TXsOQlHjY" alt="" />
+                </ImageFour>
+
+            </FeaturesPage>
+
+
+
+            {/* <PageThree>
                 <Fade bottom>
                     <span>
                         Our mission
@@ -95,7 +143,8 @@ const LandAgain = () => {
                         innovation of one and all. "
                     </p>
                 </Fade>
-            </PageThree>
+            </PageThree> */}
+
             <Footer>
                 <h1>Grinder</h1>
 
@@ -234,14 +283,8 @@ const RemoveSideBar = styled.div`
 
 
 const Container = styled.div`
-    -webkit-backface-visibility: hidden;
-    background-color: red;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    bottom: 0;
-    z-index: 2;
-    overflow-y: scroll;
+    background-color: #1f2225;
+    position: relative;
 `
 
 const PageOne = styled.div`
@@ -354,15 +397,22 @@ const DancerDownIcon = styled.div`
 
 
 const PageTwo = styled.div`
-    min-height: 100vh;
+    min-height: 75vh;
     background-color: #1f2225;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    padding-top: 25vh;
+    margin-bottom: 20vh;
+
+
+    section{
+        width: 60%;
+    }
 
     h1{
+        margin-top: 2rem;
         color: #f1f1f1;
     }
     span{
@@ -371,8 +421,96 @@ const PageTwo = styled.div`
     p{
         color: #f1f1f1;
         font-size: 0.8rem;
+        font-family: 'Cedarville Cursive', cursive;
     }
 `
+
+const FeaturesPage = styled.div`
+    background-color: #1f2225;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20vh;
+
+    section{
+        width: 60%;
+    }
+
+    h1{
+        margin-top: 2rem;
+        color: #f1f1f1;
+        font-size: 1.5rem;
+    }
+    span{
+        color: white;
+        font-size: 0.95rem;
+        font-family: 'Cedarville Cursive', cursive;
+    }
+    p{
+        color: #f5c6c6;
+        font-size: 0.85rem;
+        font-family: 'Cedarville Cursive', cursive;
+    }
+`
+
+const ImageOne = styled.div`
+    position: absolute;
+    margin-top: -50vh;
+    width: 60%;
+    margin-left: 40%;
+    padding: 0.4rem;
+    padding-bottom: 0.5rem;
+    background-color: #f1f1f1;
+    transform: rotate(-10deg);
+
+    img{
+        width: 100%;
+    }
+`
+
+const ImageTwo = styled.div`
+    position: absolute;
+    margin-top: -70vh;
+    margin-left: -5%;
+    padding: 0.4rem;
+    padding-bottom: 0.5rem;
+    background-color: #f1f1f1;
+    transform: rotate(10deg);
+
+    img{
+        width: 100%;
+    }
+`
+
+const ImageThree = styled.div`
+    position: absolute;
+    margin-top: 20vh;
+    margin-left: 55%;
+    padding: 0.1rem;
+    padding-bottom: 0rem;
+    /* background-color: pink; */
+    /* transform: rotate(10deg); */
+    border-radius: 10px;
+
+    img{
+        width: 100%;
+        border-radius: 10px;
+    }
+`
+
+const ImageFour = styled.div`
+    position: absolute;
+    margin-top: 70vh;
+    
+    img{
+        width: 100%;
+        border: 1px solid purple;
+        border-radius: 10px;
+    }
+`
+
+
 
 const PageFour = styled.div`
     scroll-snap-align: center;
@@ -383,6 +521,7 @@ const PageFour = styled.div`
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
 
     h1{
         color: #f1f1f1;
@@ -446,7 +585,7 @@ const ImageBox = styled.div`
 
 const PageThree = styled.div`
     min-height: 100vh;
-    background-color: #282626;
+    background-color: #1f2225;
     padding: 1rem;
     display: flex;
     flex-direction: column;

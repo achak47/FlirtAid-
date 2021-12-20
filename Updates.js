@@ -9,11 +9,11 @@ import SearchIcon from '@material-ui/icons/Search';
 const Updates = () => {
     return (
         <CoverContainer>
-        <Container>
-            {/* ? We can also make a top orange colored
+            <Container>
+                {/* ? We can also make a top orange colored
             thing that can show what can one do on this 
             page */}
-            {/* <TopOptionHeader>
+                {/* <TopOptionHeader>
                 <span style={{background: '#f1f1f1'}}>
                     32 Likes
                 </span>
@@ -22,32 +22,48 @@ const Updates = () => {
                     Suggested
                 </span>
             </TopOptionHeader> */}
-            <TopBar>
-                <Link to='/home' style={{margin: '0.3rem 1rem 0 0'}}>
-                    <ArrowBackIcon style={{fill: 'white'}}/>
-                </Link>
-                <p>Zayn Malik</p>
-            </TopBar>
-            <TopOptionHeaderTop>
-            <Link to="/chats">
-                <span>
-                    Chats
-                </span>
-            </Link>
-                <section></section>
-                <Link to="/updates">
-                    <span style={{background: '#CF142B'}}>
-                        Updates
-                    </span>
-                </Link>
-            </TopOptionHeaderTop>
-            <SearchByName>
-                <SearchIcon style={{fontSize: '1.4rem', marginRight: '0.4rem'}}/>
-                <input type="text" placeholder="search"/>
-            </SearchByName>
+                <TopBar>
+                    <Link to='/home' style={{ margin: '0.3rem 1rem 0 0' }}>
+                        <ArrowBackIcon style={{ fill: 'white' }} />
+                    </Link>
+                    <p>Comming Soon</p>
+                </TopBar>
+                <TopOptionHeaderTop>
+                    <Link to="/chats">
+                        <span>
+                            Chats
+                        </span>
+                    </Link>
+                    <section></section>
+                    <Link to="/updates">
+                        <span style={{ background: '#CF142B' }}>
+                            Updates
+                        </span>
+                    </Link>
+                </TopOptionHeaderTop>
+                <SearchByName>
+                    <SearchIcon style={{ fontSize: '1.4rem', marginRight: '0.4rem' }} />
+                    <input type="text" placeholder="search" />
+                </SearchByName>
 
-            <CardHolder>
-                <Card style={{background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, #000000db 100%), url('https://media.glamour.com/photos/56957f9d5fff94d44eec31f3/master/pass/beauty-2015-02-dakota-johnson-fifty-shades-lipstick-main.jpg') center center / cover no-repeat"}}>
+                <CardHolder>
+                    <Card style={{ background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, #000000db 100%), url('https://media.glamour.com/photos/56957f9d5fff94d44eec31f3/master/pass/beauty-2015-02-dakota-johnson-fifty-shades-lipstick-main.jpg') center center / cover no-repeat" }}>
+                        <section>
+                            <div>
+                                93%
+                            </div>
+                            <main>
+                                <p>
+                                    Comming Soon
+                                </p>
+                                <span>
+                                    Department, 25
+                                </span>
+                            </main>
+                        </section>
+                    </Card>
+
+                    {/* <Card style={{background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, #000000db 100%), url('https://media.glamour.com/photos/56957f9d5fff94d44eec31f3/master/pass/beauty-2015-02-dakota-johnson-fifty-shades-lipstick-main.jpg') center center / cover no-repeat"}}>
                     <section>
                         <div>
                             93%
@@ -211,9 +227,9 @@ const Updates = () => {
                             </span>
                         </main>
                     </section>
-                </Card>
-            </CardHolder>
-        </Container>
+                </Card> */}
+                </CardHolder>
+            </Container>
         </CoverContainer>
     )
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import ClearIcon from '@material-ui/icons/Clear';
@@ -7,103 +8,137 @@ const SignUp = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [gender, setGender] = useState('Male');
+    const [gender, setGender] = useState('1');
+    const [alertMessage, setAlertMessage] = useState("");
+    const [progress, setProgress] = useState(false);
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(name);
-        console.log(email);
-        console.log(password);
-        console.log(gender);
 
         if (!name) {
-            alert("Please Enter your Name");
+            setAlertMessage("Please Enter your Name");
         }
         else if (!email) {
-            alert("Please Enter your Email");
+            setAlertMessage("Please Enter your Email");
+
         }
         else if (!password) {
-            alert("Please Enter your Password");
+            setAlertMessage("Please Enter your Password");
+
         }
         else if (!gender) {
-            alert("Please Enter your Gender");
+            setAlertMessage("Please Enter your Gender");
+
         }
-        else{
-            const onSignup = () => {
-                fetch('https://flirtaid.herokuapp.com/register', {
-                    method: 'post',
-                    headers: { 'content-type': 'application/json' },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        password: password,
-                        gender: gender,
-                    })
-                }).then(response => response.json())
-                    .then(user => {
-                        if (user.name) {
-                            this.setState({ route: 'Dashboard' });
-                            // Change dashboard to otp
-                        }
-                        else {
-                            alert(user);
-                        }
-                    })
-            }
+        else if (email.includes('@') && email.includes('.com') && (email.length > 7)) {
+            setProgress(true);
+            fetch('https://faid-api.herokuapp.com/register', {
+                method: 'post',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: (email.toLowerCase()),
+                    password: password,
+                    gender: gender,
+                })
+            }).then(response => response.json())
+                .then(user => {
+                    setProgress(false);
+                    if (user.name) {
+                        this.setState({ route: 'Dashboard' });
+                        // Change dashboard to otp
+                    }
+                    else {
+                        setAlertMessage(user);
+                    }
+                })
+        }
+        else {
+            setAlertMessage("Invaild Email");
         }
 
         setName("");
         setEmail("");
         setPassword("");
+        setGender("");
     }
+
+    const [showAlert, setShowAlert] = useState(false);
 
 
     return (
         <>
-        <Container>
+            {
+                showAlert ? (
+                    <>
+                        <CustomAleart onClick={() => setShowAlert(false)}>
+                            <div>
+                                {alertMessage}
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/1200px-Flat_cross_icon.svg.png" alt="" />
+                            </div>
+                        </CustomAleart>
+                    </>
+                )
+
+                    :
+
+                    (
+                        <></>
+                    )
+            }
+            <Container>
+                <Link to="/">
+                    <section>
+                        <ClearIcon style={{ fill: "white" }} />
+                    </section>
+                </Link>
                 <section>
-                    <ClearIcon style={{ fill: "white" }} />
-                </section>
-                <section>
-                    <h1 style={{marginLeft: '0.5rem'}}>
+                    <h1 style={{ marginLeft: '0.5rem' }}>
                         Sign Up
                     </h1>
                 </section>
                 <Inputs>
                     <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-                    <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </Inputs>
                 <OptionsImp>
-                    <input type="radio" id="exampleRadios1" name="gender" value="option1"  style={{marginLeft: '0.5rem'}}/>
-                    <label class="form-check-label-local" for="exampleRadios1" style={{color: 'grey', fontSize: '0.9rem', margin: '0 1rem 0 0.4rem'}}>
+                    <input type="radio" id="exampleRadios1" name="gender" value="Male" style={{ marginLeft: '0.5rem' }} onClick={(e) => setGender(e.target.value)} />
+                    <label class="form-check-label-local" for="exampleRadios1" style={{ color: 'grey', fontSize: '0.9rem', margin: '0 1rem 0 0.4rem' }}>
                         Male
                     </label>
-                    <input type="radio" id="exampleRadios2" name="gender" value="option2"/>
-                    <label class="form-check-label-local" for="exampleRadios2"  style={{color: 'grey', fontSize: '0.9rem', margin: '0 1rem 0 0.4rem'}}>
+                    <input type="radio" id="exampleRadios2" name="gender" value="Female" onClick={(e) => setGender(e.target.value)} />
+                    <label class="form-check-label-local" for="exampleRadios2" style={{ color: 'grey', fontSize: '0.9rem', margin: '0 1rem 0 0.4rem' }}>
                         Female
                     </label>
-                    <input type="radio" id="exampleRadios2" name="gender" value="option2"/>
-                    <label class="form-check-label-local" for="exampleRadios2"  style={{color: 'grey', fontSize: '0.9rem', margin: '0 1rem 0 0.4rem'}}>
+                    <input type="radio" id="exampleRadios2" name="gender" value="Others" onClick={(e) => setGender(e.target.value)} />
+                    <label class="form-check-label-local" for="exampleRadios2" style={{ color: 'grey', fontSize: '0.9rem', margin: '0 1rem 0 0.4rem' }}>
                         Others
                     </label>
                 </OptionsImp>
 
 
-                <RightButtonContainer  onSubmit={handleSubmit}>
-                    <button type="submit">
-                        <ArrowForwardIcon style={{ fill: 'white' }}/>
+                <RightButtonContainer onSubmit={handleSubmit}>
+                    <button type="submit" onClick={() => setShowAlert(true)}>
+                        {
+                            progress ? (
+                                <img className="progress-image" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Lightness_rotate_36f_cw.gif" alt="" />
+                            ) : (
+                                <ArrowForwardIcon style={{ fill: 'white' }} />
+                            )
+                        }
                     </button>
                 </RightButtonContainer>
-
+                <HideNav>
+                    <section>
+                        <span>
+                            Already have an account? <ChangeToRed>Sign in</ChangeToRed>
+                        </span>
+                    </section>
+                </HideNav>
             </Container>
-            <HideNav>
-                <section>
-                    <span>
-                        Already have an account? <ChangeToRed>Sign in</ChangeToRed> 
-                    </span>
-                </section>
-            </HideNav>
         </>
     )
 }
@@ -111,20 +146,24 @@ const SignUp = () => {
 export default SignUp
 
 const ChangeToRed = styled.main`
-    color: #ef4239;
+    /* color: #ef4239; */
+    color: black;
     display: inline;
 `
 
 const Container = styled.div`   
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 0.5rem;
     background-color:  black;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5)), url('https://searchera.io/img/pattern.svg') center center / cover no-repeat;
     position: relative;
-    position: fixed;
     bottom: 0;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    z-index: 10;
+
+    .progress-image{
+        height: 1.5rem;
+    }
 
     section{
         display: block;
@@ -143,13 +182,10 @@ const OptionsImp = styled.div`
 `
 
 const HideNav = styled.div`
-    position: absolute;
-    bottom: 0;
-    height: 65px;
-    width: 100vw;
-    background-color:  black;
-    z-index: 11;
-
+    text-align: center;
+    width: 100%;
+    margin-top: 23vh;
+    
     section{
         display: flex;
         justify-content: space-between;
@@ -227,5 +263,43 @@ const RightButtonContainer = styled.form`
         display: grid;
         place-items: center;
         border: none;
+    }
+`
+
+const CustomAleart = styled.div`
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    transition-delay: 2s;
+    @media(min-width: 900px){
+            display: none;
+        } 
+    
+    
+    div{
+        position: fixed;
+        top: 30px;
+        z-index: 100;
+        padding: 1rem;
+        width: 600px;
+        background-color: #5fd979;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+
+        @media(max-width: 900px){
+            padding: 0.5rem 1rem;
+            width: 90vw;
+            top: auto;
+            bottom: 20px;
+            font-size: 0.9rem;
+            background-color: #5fd979;
+        } 
+
+        img {
+            height: 1.4rem;
+            margin-right: 0.3rem;
+        }
     }
 `

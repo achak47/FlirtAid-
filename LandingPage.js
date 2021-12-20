@@ -295,15 +295,6 @@ const RemoveSideBar = styled.div`
 
 
 const Container = styled.div`
-    background-color: red;
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    bottom: 0;
-    z-index: 2;
-    overflow: hidden;
-    overflow-y: scroll;
 `
 
 const PageOne = styled.div`
@@ -323,7 +314,6 @@ const ShowTop = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 3rem;
 
     h1{
         color: white;

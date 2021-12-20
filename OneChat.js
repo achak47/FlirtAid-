@@ -8,6 +8,10 @@ import SendIcon from '@material-ui/icons/Send';
 
 
 const OneChat = () => {
+    
+
+
+
     return (
         <GreatContainer>
             <TopBar>
@@ -16,8 +20,8 @@ const OneChat = () => {
                 </Link>
                 <DisplayProfilePic style={{ background: "url('https://media.glamour.com/photos/56957f9d5fff94d44eec31f3/master/pass/beauty-2015-02-dakota-johnson-fifty-shades-lipstick-main.jpg') center center / cover no-repeat" }} />
                 <p>Dakota Johnson</p>
-                <Signal>
 
+                <Signal>
                 </Signal>
 
                 <section>

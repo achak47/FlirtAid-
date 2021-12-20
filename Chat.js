@@ -9,33 +9,49 @@ import SearchIcon from '@material-ui/icons/Search';
 const Chat = () => {
     return (
         <>
-        <Container>
-            <TopBar>
-                <Link to='/home' style={{margin: '0.3rem 1rem 0 0'}}>
-                    <ArrowBackIcon style={{fill: 'white'}}/>
-                </Link>
-                <p>Zayn Malik</p>
-            </TopBar>
-            <TopOptionHeader>
-            <Link to="/chats">
-                <span style={{background: '#CF142B'}}>
-                    Chats
-                </span>
-            </Link>
-                <section></section>
-                <Link to="/updates">
-                    <span>
-                        Updates
-                    </span>
-                </Link>
-            </TopOptionHeader>
-            
-            <SearchByName>
-                <SearchIcon style={{fontSize: '1.4rem', marginRight: '0.4rem'}}/>
-                <input type="text" placeholder="search"/>
-            </SearchByName>
-            
-            <Link to="personal-chat">
+            <Container>
+                <TopBar>
+                    <Link to='/home' style={{ margin: '0.3rem 1rem 0 0' }}>
+                        <ArrowBackIcon style={{ fill: 'white' }} />
+                    </Link>
+                    <p>Comming Soon</p>
+                </TopBar>
+                <TopOptionHeader>
+                    <Link to="/chats">
+                        <span style={{ background: '#CF142B' }}>
+                            Chats
+                        </span>
+                    </Link>
+                    <section></section>
+                    <Link to="/updates">
+                        <span>
+                            Updates
+                        </span>
+                    </Link>
+                </TopOptionHeader>
+
+                <SearchByName>
+                    <SearchIcon style={{ fontSize: '1.4rem', marginRight: '0.4rem' }} />
+                    <input type="text" placeholder="search" />
+                </SearchByName>
+
+                <NameCard>
+                    <DisplayProfilePic style={{ background: "url('https://media.glamour.com/photos/56957f9d5fff94d44eec31f3/master/pass/beauty-2015-02-dakota-johnson-fifty-shades-lipstick-main.jpg') center center / cover no-repeat" }} />
+                    <DisplayPerson>
+                        <main>
+                            <h5>Comming Soon</h5>
+                            <span>2 hours ago</span>
+                        </main>
+                        <section>
+                            Delivered
+                        </section>
+                    </DisplayPerson>
+                </NameCard>
+
+                {/* ------- I M P O R D A N T - remove the above name card and uncomment the below
+                four Links */}
+
+                {/* <Link to="personal-chat">
                 <NameCard>
                     <DisplayProfilePic style={{background: "url('https://media.glamour.com/photos/56957f9d5fff94d44eec31f3/master/pass/beauty-2015-02-dakota-johnson-fifty-shades-lipstick-main.jpg') center center / cover no-repeat"}}/>
                     <DisplayPerson>
@@ -47,10 +63,7 @@ const Chat = () => {
                             Delivered
                         </section>
                     </DisplayPerson>
-                    {/* <ShowSignal>
-                        <section  style={{background: "green"}}>
-                        </section>
-                    </ShowSignal> */}
+                    
                 </NameCard>
             </Link>
 
@@ -66,10 +79,6 @@ const Chat = () => {
                             New Message
                         </section>
                     </DisplayPerson>
-                    {/* <ShowSignal>
-                        <section  style={{background: "orange"}}>
-                        </section>
-                    </ShowSignal> */}
                 </NameCard>
             </Link>
 
@@ -85,10 +94,6 @@ const Chat = () => {
                             New Message
                         </section>
                     </DisplayPerson>
-                    {/* <ShowSignal>
-                        <section  style={{background: "orange"}}>
-                        </section>
-                    </ShowSignal> */}
                 </NameCard>
             </Link>
 
@@ -105,14 +110,10 @@ const Chat = () => {
                         New Message
                     </section>
                 </DisplayPerson>
-                {/* <ShowSignal>
-                    <section  style={{background: "red"}}>
-                    </section>
-                </ShowSignal> */}
             </NameCard>
-            </Link>
-        </Container>
-        {/* <BottomNavbar></BottomNavbar> */}
+            </Link> */}
+            </Container>
+            {/* <BottomNavbar></BottomNavbar> */}
         </>
     )
 }

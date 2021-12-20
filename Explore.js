@@ -1,27 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
+import BasicBottomNav from './BasicBottomNav'
 import BottomNavbar from './BottomNavbar'
+import { Link } from 'react-router-dom'
 
 const Explore = () => {
     return (
         <Container>
             <CardHolders>
-                {/* <CardOne>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Eo_circle_orange_heart.svg/1024px-Eo_circle_orange_heart.svg.png" alt="" />
+                <CardTwo>
                     <section>
                         <main>
-                            <h4>Love Calculator</h4>
+                            <h4>Your Likes</h4>
                             <p>
-                                This will enable you to check your probable 
-                                compatibility with the person. You can also search
-                                your compatibility with few celebrities too.
+                                This shows all the profiles you have liked,
+                                and sent request to. 
                             </p>
                         </main>
                         <a>
-                            View now
+                            comming soon
                         </a>
                     </section>
-                </CardOne> */}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Eo_circle_orange_heart.svg/1024px-Eo_circle_orange_heart.svg.png" alt="" />
+                </CardTwo>
                 {/* <CardTwo>
                     <section>
                         <main>
@@ -47,13 +48,13 @@ const Explore = () => {
                                 Lorem ipsum dolor si alias maio. Nam esse necessitatibus at. Error facilis ipsum fugit sapiente?
                             </p>
                         </main>
-                        <a>
-                            comming soon
-                        </a>
+                        <Link to="/confessions">
+                            View Now
+                        </Link>
                     </section>
                 </CardOne>
             </CardHolders>
-            <BottomNavbar />
+            <BasicBottomNav />
         </Container>
     )
 }
@@ -63,6 +64,10 @@ export default Explore
 const Container = styled.div`
     background-color: #1f2225;
     min-height: 100vh;
+
+    a{
+        text-decoration: none;
+    }
 `
 
 const CardHolders = styled.div`

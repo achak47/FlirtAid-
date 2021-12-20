@@ -12,3 +12,13 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
+// let fileInput = document.querySelector('#file-input');
+// let numOfFiles = document.querySelector("#num-of-files");
+// console.log(fileInput);
+// console.log(numOfFiles);
+
+
+// numOfFiles.textContent = `${fileInput.files.lenght} Images Selected`;
+// numOfFiles.textContent = "Fuck";
+

@@ -1,39 +1,107 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import ClearIcon from '@material-ui/icons/Clear';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import Home from './Home';
 
-const Login = () => {
+
+const Login = ({ setMainUser, mainUser }) => {
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [route, setRoute] = useState(false);
+    const [secondryMainUser, setSecondryMainUser] = useState({});
+    const [progress, setProgress] = useState(false);
+
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // console.log(email);
+        // console.log(password);
+        if (!email) {
+            alert("Please Enter your Email");
+        }
+        else if (!password) {
+            alert("Please Enter your Password");
+        }
+        else {
+            setProgress(true);
+            fetch('https://faid-api.herokuapp.com/login', {
+                method: 'post',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                })
+            }).then(response => response.json())
+                .then(user => {
+                    if (user[0].name) {
+                        // let Localstring = user[0].email;
+                        // setMainUser(Localstring);
+                        setMainUser(user[0]);
+                        setSecondryMainUser(user[0]);
+                        setRoute(true);
+                        setProgress(false);
+                    }
+                    else{
+                        alert(" Wrong Password! ");
+                        setProgress(false);
+                    }
+                })
+        }
+
+        setEmail("");
+        setPassword("");
+    }
+
     return (
         <>
-            <Container>
-                <section>
-                    <ClearIcon style={{ fill: "white" }} />
-                </section>
-                <section>
-                    <h1 style={{marginLeft: '0.5rem'}}>
-                        Login
-                    </h1>
-                </section>
-                <Inputs>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <div>
-                        <span>
-                            <ChangeToRed>
-                                Forgot your password ?
-                            </ChangeToRed>
-                        </span>
-                    </div>
-                </Inputs>
-                <RightButtonContainer>
-                    <button>
-                        <ArrowForwardIcon style={{ fill: 'white' }} />
-                    </button>
-                </RightButtonContainer>
+            {
+                !route ? (
+                    <Container>
+                        <Link to="/">
+                            <section>
+                                <ClearIcon style={{ fill: "white" }} />
+                            </section>
+                        </Link>
+                        <section>
+                            <h1 style={{ marginLeft: '0.5rem' }}>
+                                Login
+                            </h1>
+                        </section>
+                        <Inputs>
+                            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <div>
+                                <span>
+                                    <ChangeToRed>
+                                        Forgot your password ?
+                                    </ChangeToRed>
+                                </span>
+                            </div>
+                        </Inputs>
+                        <RightButtonContainer onSubmit={handleSubmit}>
+                            <button type="submit">
+                                {
+                                    progress ? (
+                                        <img className="progress-image" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Lightness_rotate_36f_cw.gif" alt="" />
+                                    ) : (
+                                        <ArrowForwardIcon style={{ fill: 'white' }} />
+                                    )
+                                }
+                            </button>
+                        </RightButtonContainer>
 
-            </Container>
-            <HideNav>
+                    </Container>
+                ) : (
+                    <>
+                        <Home mainUser={secondryMainUser} />
+                    </>
+                )
+            }
+            {/* <HideNav>
                 <section>
                     <span>
                         Login with media
@@ -47,7 +115,7 @@ const Login = () => {
                         <img src="http://assets.stickpng.com/images/584ac2d03ac3a570f94a666d.png" alt="" />
                     </button>
                 </section>
-            </HideNav>
+            </HideNav> */}
         </>
     )
 }
@@ -61,15 +129,14 @@ const ChangeToRed = styled.main`
 `
 
 const Container = styled.div`   
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 0.5rem;
     background-color:  black;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5)), url('https://searchera.io/img/pattern.svg') center center / cover no-repeat;
     position: relative;
-    position: fixed;
     bottom: 0;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    z-index: 10;
 
     section{
         display: block;
@@ -80,6 +147,10 @@ const Container = styled.div`
             font-size: 1.5rem;
             letter-spacing: 0.05rem;
         }
+    }
+
+    .progress-image{
+        height: 1.5rem;
     }
 `
 
@@ -154,7 +225,7 @@ const Inputs = styled.div`
     }
 `
 
-const RightButtonContainer = styled.div`
+const RightButtonContainer = styled.form`
     display: flex;
     justify-content: flex-end;
     padding-right: 16px;
