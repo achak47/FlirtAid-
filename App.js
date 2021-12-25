@@ -21,11 +21,14 @@ import Market from './components/Market';
 import ViewProfile from './components/ViewProfile';
 import LandAgain from './components/LandAgain';
 import LandInChina from './components/LandInChina';
+import PreRegister from './components/PreRegister';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Learn from './components/Learn';
 import CommunitiesGuidelines from './components/CommunitiesGuidelines';
 import AddPhotos from './components/AddPhotos';
 import ConfessionPage from './components/ConfessionPage';
+import TermsAndCond from './components/TermsAndCond';
+import OurTeam from './components/OurTeam';
 
 
 const App = () => {
@@ -42,14 +45,22 @@ const App = () => {
           <Routes>
             <Route path="/login" element={<Login setMainUser={setMainUser} mainUser={mainUser} />} />
             <Route path="/signup" element={<SignUp  setMainUser={setMainUser} mainUser={mainUser} />} />
-            <Route path="/" element={<LandInChina />} />
+            <Route path="/" element={<PreRegister />} />
+            {/* <Route path="/" element={<LandInChina />} /> */}
             <Route path="/create-account" element={<CreateProfile mainUser={mainUser}/>} />
+            <Route path="/view-profile" element={<ViewProfile currUser={currUser}/>} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/learn" element={<Learn />} />
+            <Route path="/community-guidelines" element={<CommunitiesGuidelines />} />
+            <Route path="/terms-and-co" element={<TermsAndCond />} />
+            <Route path="/our-team" element={<OurTeam />} />
           </Routes>
         ) : (
           <Routes>
             <Route path="/login" element={<Login setMainUser={setMainUser} mainUser={mainUser} />} />
             <Route path="/signup" element={<SignUp  setMainUser={setMainUser} mainUser={mainUser} />} />
-            <Route path="/" element={<LandInChina />} />
+            <Route path="/" element={<PreRegister />} />
+            {/* <Route path="/" element={<LandInChina />} /> */}
             <Route path="/home" element={<Home mainUser={mainUser} setCurrUser={setCurrUser}/>} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/updates" element={<Updates />} />
@@ -66,6 +77,7 @@ const App = () => {
             <Route path="/community-guidelines" element={<CommunitiesGuidelines />} />
             <Route path="/upload-photos" element={<AddPhotos />} />
             <Route path="/confessions" element={<ConfessionPage mainUser={mainUser} />} />
+            <Route path="/our-team" element={<OurTeam />} />
           </Routes>
         )
       }

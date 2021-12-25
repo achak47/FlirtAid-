@@ -91,13 +91,13 @@ const LandInChina = () => {
 
                     <FeatureContainer>
                         <Fade bottom>
-                            <img src="https://media-exp1.licdn.com/dms/image/C4E22AQH21evYiDZPLw/feedshare-shrink_2048_1536/0/1639243748629?e=1642032000&v=beta&t=Eowmh0GbqQJ1tBcK3270eIdJk8hJMKuEucyoEyjewh0" alt="" />
+                            <img src="https://media-exp1.licdn.com/dms/image/C5622AQEyEAK5BS-gQQ/feedshare-shrink_2048_1536/0/1640453903525?e=1643241600&v=beta&t=4YCGf-Ov14IeSmaGTBQPDIlTnVapx-y3vB2NTeyu80w" alt="" />
                         </Fade>
                         <Fade bottom>
                             <p>Signal</p>
                         </Fade>
                         <Fade bottom>
-                            <span> Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor. </span>
+                            <span>  FlirtAid provides a simple yet effective solution to a very common discomfort which plagues almost every couple who match for the first time over a dating app. How should I go about the conversation? I find myself attracted but I don’t want to sound too desperate. At the same time I don’t want to come across as some uninterested douchebag.and lose the opposite person. FlirtAid incorporates a “Traffic Signal” to ensure a smooth conversation between the newly matched couple.</span>
                         </Fade>
                     </FeatureContainer>
 
@@ -109,7 +109,7 @@ const LandInChina = () => {
                             <p>Love Percentage</p>
                         </Fade>
                         <Fade bottom>
-                            <span> Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor. </span>
+                            <span> Have you ever wondered if the person you just matched with is a match for you? Do you actually have things in common?! Introducing FlirtAid’s Match Meter! Using a proprietary algorithm, we predict the compatibility between you and your to-be partner. But REMEMBER: scores shouldn’t be given much priority in matters of the heart</span>
                         </Fade>
                     </FeatureContainer>
 
@@ -121,7 +121,7 @@ const LandInChina = () => {
                             <p>A.I. protected user signup</p>
                         </Fade>
                         <Fade bottom>
-                            <span> Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor. </span>
+                            <span> How many times has a man pretended to be a woman just to prank his friends? It might just be a prank for him but being on the other end of an angel priya relationship breaks you down completely. FlirtAid uses a ML Face Recognition Model to check your gender. You will never chat with a fake profile ever again. We Promise!</span>
                         </Fade>
                     </FeatureContainer>
                 </PageThree>
@@ -204,7 +204,7 @@ const Container = styled.div`
     overflow-x: hidden;
 
     .mainLogo{
-        width: 140px;
+        width: 100px;
     }
 
     

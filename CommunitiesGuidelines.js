@@ -1,10 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 
 const CommunitiesGuidelines = () => {
     return (
         <Container>
+            <Link to='/'>
+                <ArrowBackIosIcon/>
+            </Link>
             <h1>Guidelines</h1>
             <p>Welcome to the FlirtAid community. If you’re honest, kind and respectful to others, you’ll always be welcome here. If you choose not to be, you may not last. Our goal is to allow users to express themselves freely as long as it doesn’t offend others. Everyone is held to the same standard on FlirtAid. We’re asking you to be considerate, think before you act, and abide by our community guidelines both on and offline. You heard that right: your offline behavior can lead to termination of your FlirtAid account.Below is a list of our community policies. If you violate any of these policies, you might be banned from FlirtAid. Seriously, don’t make us Swipe Left on you—because there will be no do-overs once we do.FlirtAid is not for:</p>
             <h3>Nudity/Sexual Content</h3>

@@ -59,6 +59,8 @@ const Home = ({ mainUser, setCurrUser }) => {
 
 
 
+
+
     return (
         <>
             {
@@ -77,9 +79,9 @@ const Home = ({ mainUser, setCurrUser }) => {
                                     <h4>Name of the user</h4>
                                 </ModelUser> */}
                                 <DeniedModalDesc>
-                                    We need you profile which contains things likes you hobbies, 
+                                    We need you profile which contains things likes you hobbies,
                                     picture, and some other cool stuff. Here you will get to know
-                                    people and date them. We know how hard the covid time was so 
+                                    people and date them. We know how hard the covid time was so
                                     we are here to get you with a connection.
                                     Create your profile now.
                                 </DeniedModalDesc>
@@ -91,9 +93,9 @@ const Home = ({ mainUser, setCurrUser }) => {
                             </DeniedModalContainer>
                         </Modal>
                         {/* ------------  M O B I L E  A C C E S S  D E N I E D  E N D ------------ */}
-                        <TopNavigationFake setOpenDeniedModal={setOpenDeniedModal}/>
-                        <CardsContainNotVer setOpenDeniedModal={setOpenDeniedModal}/>
-                        <BasicBottomNavFake setOpenDeniedModal={setOpenDeniedModal}/>
+                        <TopNavigationFake setOpenDeniedModal={setOpenDeniedModal} />
+                        <CardsContainNotVer setOpenDeniedModal={setOpenDeniedModal} />
+                        <BasicBottomNavFake setOpenDeniedModal={setOpenDeniedModal} />
                     </Container>
                 ) : (
                     <Container>
@@ -264,3 +266,4 @@ const ModelPost = styled.button`
         text-align: center;
     }
 `
+

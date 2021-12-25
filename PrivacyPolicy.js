@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 const PrivacyPolicy = () => {
     return (
         <Container>
+            <Link to='/'>
+                <ArrowBackIosIcon/>
+            </Link>
             <h1>
                 Privacy Policy
             </h1>

@@ -1,9 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+
 
 const Learn = () => {
     return (
         <Container>
+            <Link to='/'>
+                <ArrowBackIosIcon/>
+            </Link>
             <h1>How to Use</h1>
             <h3>How to match?</h3>
             <p>As soon as you sign up to the app, you will be asked to complete your profile. You will have the option to input links to your other social media accounts (read Facebook, Instagram, Reddit, LinkedIn or/and Twitter). You will have to fill in your hobbies and passions, your department and your year of study. A short bio and some of your best pictures will definitely increase your chances of finding your loved one. After this time investment into finding eternal love, you will come to the homepage. The homepage will show you pictures of people based on your orientation. </p>
