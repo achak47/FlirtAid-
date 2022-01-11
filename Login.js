@@ -46,7 +46,7 @@ const Login = ({ setMainUser, mainUser }) => {
                         setProgress(false);
                     }
                     else{
-                        alert(" Wrong Password! ");
+                        alert(user);
                         setProgress(false);
                     }
                 })
